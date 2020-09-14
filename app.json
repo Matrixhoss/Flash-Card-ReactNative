@@ -1,0 +1,12 @@
+{
+  "name": "flash-cards-react-native",
+  "displayName": "flash-cards-react-native",
+  "expo": {
+    "name": "flash-cards-react-native",
+    "slug": "flash-cards-react-native",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
