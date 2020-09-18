@@ -21,8 +21,8 @@ class Deck extends React.Component {
     return (
         <View style={styles.container}>
             <View style={styles.textcontainer}>
-                <Text style={styles.decktitle}>{deck.title  !== undefined ? deck.title : ''}</Text>
-                <Text style={styles.deckcards}>{deck.questions.length ? deck.questions.length : 0  } cards</Text>
+                <Text style={styles.decktitle}>{deck  !== null ? deck.title : 'bbb'}</Text>
+                <Text style={styles.deckcards}>{deck !==null ? deck.questions.length : 0  } cards</Text>
              </View>
 
              <View style={styles.textcontainer}>
@@ -91,8 +91,9 @@ const styles = StyleSheet.create({
 
   function mapStateToProps({decks},props){
         const {id} = props.route.params
+        const deck = decks ? decks[id] : null
         return {
-            deck : decks[id],
+            deck ,
             id
         }
   }

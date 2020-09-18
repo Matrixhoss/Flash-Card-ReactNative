@@ -6,6 +6,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStore ,applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
+import {setLocalNotification} from './utils/helper'
 import reducer from './reducers'
 import thunk from 'redux-thunk'
 import DecksList from './components/DecksList'
@@ -104,6 +105,9 @@ const Stacks = () => {
 export default class App extends React.Component {
   store = createStore(reducer ,applyMiddleware(thunk  ))
 
+  componentDidMount(){
+    setLocalNotification()
+  }
   render(){
     return(
       <Provider store={this.store}>

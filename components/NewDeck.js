@@ -14,10 +14,10 @@ class NewDeck extends Component  {
     }
     handelAddNewDeck = () => {
         const {dispatch} = this.props
-    
+        const id = this.setState.value
         Keyboard.dismiss()
        dispatch(handleAddDeck(this.state.value))
-       this.props.navigation.navigate('Decks List');
+       this.props.navigation.navigate('Deck',{id});
        this.setState({value : ''})
       
         
@@ -25,7 +25,7 @@ class NewDeck extends Component  {
     render(){
     return (
         <View style={styles.container}>
-        <Text style={styles.text}>Add new deck </Text>
+        <Text style={styles.text}>Create new deck </Text>
             <TextInput
                 style={styles.textfield}
                 onChangeText={text => this.onChangeText(text)}
@@ -34,7 +34,7 @@ class NewDeck extends Component  {
             <View style={styles.buttonView}>
              <TouchableOpacity style ={styles.blackbtn} onPress={this.handelAddNewDeck}>
                  <Text style = {styles.text ,{ color : '#fff',}}>
-                     Add Deck
+                 Create Deck
                  </Text>
              </TouchableOpacity>
              </View>

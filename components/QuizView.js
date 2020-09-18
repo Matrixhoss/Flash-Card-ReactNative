@@ -2,6 +2,7 @@ import React , {Component}from 'react'
 import { StyleSheet, Text, View ,TouchableOpacity ,TextInput ,Dimensions ,Keyboard} from 'react-native';
 import {connect} from 'react-redux'
 import {handleAddCard} from '../actions'
+import {setLocalNotification , clearLocalNotification} from '../utils/helper'
 
 class QuizView extends Component  {
 
@@ -35,6 +36,9 @@ class QuizView extends Component  {
     }
     handleGobBack =() => {
         this.props.navigation.pop()
+    }
+    componentDidMount(){
+        clearLocalNotification().then(() => setLocalNotification())
     }
     render(){
         const {questions}  = this.props 
