@@ -103,7 +103,7 @@ const Stacks = () => {
   )
 }
 export default class App extends React.Component {
-  store = createStore(reducer ,applyMiddleware(thunk  ))
+  store = createStore(reducer ,applyMiddleware(thunk))
 
   componentDidMount(){
     setLocalNotification()

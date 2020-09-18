@@ -22,9 +22,6 @@ export function handleAddCard (key , question ,answer){
     }
 }
 
-export function handelRemoveDeck(){
-    // todo : Hnadle Remover decks from redux and database
-}
 export function handleGetDecks (){
     return (dispatch) => {
         dispatch(startLoading())

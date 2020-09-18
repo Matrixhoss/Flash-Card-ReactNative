@@ -43,6 +43,14 @@ class QuizView extends Component  {
     render(){
         const {questions}  = this.props 
         const {questionsCounter ,endState ,viewQuestion} =this.state
+        if (questions.length === 0){
+            return(
+                <View style={styles.container2}>
+                <Text style={styles.maintext}>This deck has no cards</Text>
+
+                </View>
+            )
+        }
         if (endState){
             return (<View style ={styles.container2 }>
                 <Text style={{fontSize : 50 ,textAlign : 'center'}}>Your scoure is</Text>

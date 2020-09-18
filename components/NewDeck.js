@@ -14,10 +14,12 @@ class NewDeck extends Component  {
     }
     handelAddNewDeck = () => {
         const {dispatch} = this.props
-        const id = this.setState.value
+        const id = this.state.value
         Keyboard.dismiss()
        dispatch(handleAddDeck(this.state.value))
-       this.props.navigation.navigate('Deck',{id});
+       this.props.navigation.navigate('Deck', {
+        id
+      });
        this.setState({value : ''})
       
         

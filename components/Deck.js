@@ -1,8 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View ,TouchableOpacity } from 'react-native';
+import {handleGetDecks} from '../actions'
 import {connect} from 'react-redux'
-
-let mount = false
 
 class Deck extends React.Component {
 
@@ -16,15 +15,13 @@ class Deck extends React.Component {
     }
 
    render(){
-    const {deck} = this.props
-
+    const {deck, id} = this.props
     return (
         <View style={styles.container}>
             <View style={styles.textcontainer}>
-                <Text style={styles.decktitle}>{deck  !== null ? deck.title : 'bbb'}</Text>
-                <Text style={styles.deckcards}>{deck !==null ? deck.questions.length : 0  } cards</Text>
+                <Text style={styles.decktitle}>{deck !== undefined ? deck.title : 'bbb'}</Text>
+                <Text style={styles.deckcards}>{deck !== undefined ? deck.questions.length : 0  } cards</Text>
              </View>
-
              <View style={styles.textcontainer}>
              <TouchableOpacity style ={styles.whitebtn} onPress= {this.addCard}>
                  <Text style = {styles.text ,{ color : '#000',}}>
@@ -82,7 +79,6 @@ const styles = StyleSheet.create({
         paddingVertical : 15,
         paddingHorizontal  : 60 ,
         margin : 10
-    
     },
     text : {
         fontSize : 20

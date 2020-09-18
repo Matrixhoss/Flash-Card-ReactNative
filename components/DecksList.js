@@ -31,9 +31,9 @@ class DecksList extends Component {
           </View>)
         }
         return (
-            <ScrollView>
+            <ScrollView style={{paddingHorizontal : 20}}>
                 {Object.keys(decks).map((key) => (
-                    <TouchableOpacity key = {key} style={styles.container} onPress={() => this.handleOpenDeck(key)}>
+                    <TouchableOpacity key = {key} style={styles.deckcontainer} onPress={() => this.handleOpenDeck(key)}>
                         <Text style={styles.decktitle}>{decks[key].title}</Text>
                         <Text style={styles.deckcards}>{decks[key].questions? decks[key].questions.length : 0} cards</Text>
                     </TouchableOpacity>
@@ -50,6 +50,14 @@ const styles = StyleSheet.create({
       height: 75,
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    deckcontainer: {
+      height: 75,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderBottomWidth : 1 ,
+      borderBottomColor : '#000'
+      
     },
     decktitle  : {
         fontSize : 30 ,

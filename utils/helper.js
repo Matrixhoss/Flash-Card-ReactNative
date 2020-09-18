@@ -1,4 +1,5 @@
-import { Notifications, Permissions } from 'expo-permissions'
+import { Notifications} from 'expo'
+import * as Permissions from 'expo-permissions';
 import { AsyncStorage } from 'react-native'
 const NOTIFICATION_KEY = 'FlashCards:notifications'
 export function createEmptyDeck (key){
