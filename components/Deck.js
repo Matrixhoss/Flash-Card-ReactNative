@@ -5,27 +5,19 @@ import {connect} from 'react-redux'
 let mount = false
 
 class Deck extends React.Component {
-    
-    _isMounted = false;
+
     addCard = () =>{
         const {id , navigation} = this.props
         navigation.push('Add Card' , {id})
     }
      startQuiz = () =>{
-     console.log('Start quiz pressed')
+        const {id , navigation} = this.props
+        navigation.push('Quiz' , {id})
     }
-    componentDidMount(){
-        this._isMounted = true;
 
-
-    }
-    componentWillUnmount() {
-        this._isMounted = false;
-      }
    render(){
-    const {deck } = this.props
-    
-  
+    const {deck} = this.props
+
     return (
         <View style={styles.container}>
             <View style={styles.textcontainer}>

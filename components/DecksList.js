@@ -14,6 +14,7 @@ class DecksList extends Component {
     componentDidMount(){
         this.props.dispatch(handleGetDecks())
         
+        
       }
     render() {
         const {decks ,loading} = this.props
@@ -23,6 +24,11 @@ class DecksList extends Component {
                 <Text>Loading...</Text>
               </View>
             )
+        }
+        if (decks === null){
+            return (<View style={styles.container}>
+            <Text>There is no decks</Text>
+          </View>)
         }
         return (
             <ScrollView>

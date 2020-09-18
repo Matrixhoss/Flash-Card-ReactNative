@@ -11,6 +11,7 @@ import DecksList from './components/DecksList'
 import NewDeck from './components/NewDeck'
 import Deck from './components/Deck'
 import AddCard from './components/AddCard'
+import QuizView from './components/QuizView'
 
    const Stack = createStackNavigator()
    const Tab = createMaterialTopTabNavigator()
@@ -72,6 +73,20 @@ const Stacks = () => {
           component={AddCard}
           options={{
           title: 'Add Card',
+          headerStyle: {
+            backgroundColor: '#000',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+        />
+        <Stack.Screen
+          name="Quiz"
+          component={QuizView}
+          options={{
+          title: 'Quiz',
           headerStyle: {
             backgroundColor: '#000',
           },
