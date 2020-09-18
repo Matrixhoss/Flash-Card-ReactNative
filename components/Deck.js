@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
 
   function mapStateToProps({decks},props){
         const {id} = props.route.params
-        console.log('updated ---------------------')
         return {
             deck : decks[id],
             id

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View ,TouchableOpacity, StatusBar } from 'react-native';
+import { StyleSheet, Text, View ,TouchableOpacity, ScrollView } from 'react-native';
 import {connect} from 'react-redux'
 import {handleGetDecks ,handleAddCard} from '../actions'
 import {deleteData ,addCard} from '../utils/api'
@@ -25,14 +25,14 @@ class DecksList extends Component {
             )
         }
         return (
-            <View>
+            <ScrollView>
                 {Object.keys(decks).map((key) => (
                     <TouchableOpacity key = {key} style={styles.container} onPress={() => this.handleOpenDeck(key)}>
                         <Text style={styles.decktitle}>{decks[key].title}</Text>
                         <Text style={styles.deckcards}>{decks[key].questions? decks[key].questions.length : 0} cards</Text>
                     </TouchableOpacity>
                 ))}
-            </View>
+            </ScrollView>
         )
     }
 }
